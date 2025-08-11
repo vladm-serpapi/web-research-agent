@@ -14,11 +14,12 @@ LLM-powered researcher that combines OpenAI chat models with Google results via 
 - SERPAPI_API_KEY
 
 ## Install
+
+Assuming you have Python 3.9+ and virtual env installed:
+
 ```bash
 git clone https://github.com/vladm-serpapi/web-research-agent
 cd web-research-agent
-python -m venv .venv
-source .venv/bin/activate    # Windows: .venv\\Scripts\\activate
 pip install -r requirements.txt
 ```
 
@@ -62,7 +63,7 @@ python research_agent.py -h
 - Results are passed back as tool messages; model produces a final, cited answer
 - Note on model tool behavior: o3 / o4-mini reasoning models prefer to output single tool call per prompt, so gpt-4o is preferred when many queries are required
 
-## Example
+## Examples
 ```bash
 python research_agent.py -q "Compare FAISS vs. Milvus vs. Qdrant for RAG (2025)" -m o3 -n 8 -o rag_db_trace.json
 ```
